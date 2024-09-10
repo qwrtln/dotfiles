@@ -31,7 +31,7 @@ fkill() {
   ps aux | fzf --prompt="Select process to kill: " | awk '{print $2}' | xargs -r kill
 }
 
+# Search hidden files while respecting .gitignore
 fvim() {
-  fzf | xargs nvim
+  fd --type f --strip-cwd-prefix | fzf | xargs nvim
 }
-

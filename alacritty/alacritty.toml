@@ -1,0 +1,37 @@
+[window]
+title = "Alacritty"
+dynamic_title = false
+decorations = "none"
+opacity = 0.92
+
+  [window.padding]
+  x = 4
+  y = 4
+
+[scrolling]
+multiplier = 3
+
+[font]
+size = 10
+
+  [font.normal]
+  family = "MesloLGS NF"
+  
+  [font.bold]
+  family = "MesloLGS NF"
+  
+  [font.italic]
+  family = "MesloLGS NF"
+  
+  [font.bold_italic]
+  family = "MesloLGS NF"
+  
+[colors.primary]
+background = "#232627"
+foreground = "#fcfcfc"
+dim_foreground = "#eff0f1"
+bright_foreground = "#ffffff"
+
+[[mouse.bindings]]
+mouse = "Middle"
+action = "Paste"
