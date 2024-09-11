@@ -1,6 +1,6 @@
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
   --border \
-  --height 40% \
+  --height 30% \
   --layout=reverse \
   --color=bg+:#141A1F \
   --color=fg:#B2C1CC \
@@ -15,6 +15,7 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
   --color=spinner:#FF007C \
   --color=header:#7580F0"
 
+# Use fd instead of find
 FZF_ALT_C_COMMAND="fd --type d --exclude .git --follow --hidden"
 FZF_DEFAULT_COMMAND="fd --type f --exclude .git --follow --hidden"
 FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -32,6 +33,6 @@ fkill() {
 }
 
 # Search hidden files while respecting .gitignore
-fvim() {
+fv() {
   fd --type f --strip-cwd-prefix | fzf | xargs nvim
 }
