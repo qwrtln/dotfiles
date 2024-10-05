@@ -1,7 +1,7 @@
 alias ls='lsd'
 alias lss='/usr/bin/ls'
 alias ll='ls -hla'
-alias hibernate='reset && rfkill block bluetooth && systemctl hibernate -i && guake-toggle && reset'
+alias hibernate='reset && rfkill block bluetooth && systemctl hibernate -i && reset'
 alias v='nvim'
 alias tms='tmux at -t sys'
 alias pypy='pypy3'
