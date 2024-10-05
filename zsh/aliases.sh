@@ -1,5 +1,4 @@
 alias ls='lsd'
-alias lss='/usr/bin/ls'
 alias ll='ls -hla'
 alias hibernate='reset && rfkill block bluetooth && systemctl hibernate -i && reset'
 alias v='nvim'
@@ -12,7 +11,7 @@ pingtime() {
 }
 
 open() {
-    xdg-open $1
+    xdg-open $1 &> /dev/null
 }
 
 upgrade() {
