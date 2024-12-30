@@ -1,17 +1,18 @@
 alias ls='lsd'
 alias ll='ls -hla'
-alias hibernate='reset && rfkill block bluetooth && systemctl hibernate -i && reset'
+alias hibernate='systemctl hibernate -i'
 alias v='nvim'
 alias tms='tmux at -t sys'
 alias pypy='pypy3'
 alias kubectl='k'
+alias libreoffice='libreoffice --safe-mode'
 
 pingtime() {
-    ping "$1" | while read pong; do echo "$(date +"%Y-%m-%d %T"): $pong"; done
+    ping "$1" | while read -r pong; do echo "$(date +"%Y-%m-%d %T"): $pong"; done
 }
 
 open() {
-    xdg-open $1 &> /dev/null
+    xdg-open "$1" &> /dev/null
 }
 
 upgrade() {
