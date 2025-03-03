@@ -1,6 +1,6 @@
 alias ls='lsd'
 alias ll='ls -hla'
-alias hibernate='systemctl hibernate -i'
+alias hibernate='systemctl hibernate -i && reset'
 alias v='nvim'
 alias tms='tmux at -t sys'
 alias pypy='pypy3'
@@ -21,4 +21,13 @@ upgrade() {
         return 1
     fi
     yay && sudo pacman -Scc
+}
+
+res-tmux() {
+  SESSION="tmux_resurrect_19700101T000000.txt"
+  cd ~/.tmux/resurrect || exit
+  ls | grep -v "$SESSION" | xargs rm
+  ln -s "$SESSION" last
+  cd - || exit
+  tmux
 }
