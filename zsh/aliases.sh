@@ -4,7 +4,7 @@ alias hibernate='systemctl hibernate -i && reset'
 alias v='nvim'
 alias tms='tmux at -t sys'
 alias pypy='pypy3'
-alias kubectl='k'
+alias k='kubectl'
 alias libreoffice='libreoffice --safe-mode'
 
 pingtime() {
@@ -13,6 +13,10 @@ pingtime() {
 
 open() {
     xdg-open "$1" &> /dev/null
+}
+
+files() {
+    (nautilus "$1" &> /dev/null &)
 }
 
 upgrade() {
@@ -24,10 +28,10 @@ upgrade() {
 }
 
 res-tmux() {
-  SESSION="tmux_resurrect_19700101T000000.txt"
-  cd ~/.tmux/resurrect || exit
-  ls | grep -v "$SESSION" | xargs rm
-  ln -s "$SESSION" last
-  cd - || exit
-  tmux
+    SESSION="tmux_resurrect_19700101T000000.txt"
+    cd ~/.tmux/resurrect || exit
+    /usr/bin/ls | grep -v "$SESSION" | xargs rm
+    ln -s "$SESSION" last
+    cd - || exit
+    tmux
 }
