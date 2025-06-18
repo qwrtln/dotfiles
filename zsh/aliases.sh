@@ -1,11 +1,12 @@
-alias ls='lsd'
-alias ll='ls -hla'
 alias hibernate='systemctl hibernate -i && reset'
-alias v='nvim'
-alias tms='tmux at -t sys'
-alias pypy='pypy3'
 alias k='kubectl'
 alias libreoffice='libreoffice --safe-mode'
+alias ls='lsd'
+alias ll='ls -hla'
+alias pypy='pypy3'
+alias tms='tmux at -t sys'
+alias v='nvim'
+alias yd='yazi ~/Downloads'
 
 pingtime() {
     ping "$1" | while read -r pong; do echo "$(date +"%Y-%m-%d %T"): $pong"; done
