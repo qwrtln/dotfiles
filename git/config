@@ -1,0 +1,40 @@
+[alias]
+	cob = checkout -b
+	co = checkout
+	amend = commit -a --amend --no-edit
+	last = log -1 @
+[init]
+	defaultBranch = main
+[user]
+	name = Andrzej Wiącek
+	email = andrzej.wiacek@qwrtln.nl
+[push]
+	autoSetupRemote = true
+[checkout]
+	defaultRemote = origin
+[merge]
+	tool = nvimdiff
+[pull]
+	rebase = true
+[color]
+	ui = auto
+	diff = auto
+[core]
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	light = false
+	syntax-theme = "none"
+	; line-numbers = true
+	width = variable
+
+	minus-style = "white #86605F"
+	minus-emph-style = "black bold #C98789"
+	plus-style = "white #5F885F"
+	plus-emph-style = "black bold #50AF85"
+	  
+	line-numbers-minus-style = "#ff6b6b"
+	line-numbers-plus-style = "#51cf66"
+	line-numbers-zero-style = "#6c757d"
