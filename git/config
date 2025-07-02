@@ -7,7 +7,7 @@
 	defaultBranch = main
 [user]
 	name = Andrzej Wiącek
-	email = andrzej.wiacek@qwrtln.nl
+	email = qwrtln@users.noreply.github.com
 [push]
 	autoSetupRemote = true
 [checkout]
@@ -27,7 +27,7 @@
 	navigate = true
 	light = false
 	syntax-theme = "none"
-  hunk-header-style = "omit"
+	hunk-header-style = "omit"
 	line-numbers = true
 	width = variable
 
