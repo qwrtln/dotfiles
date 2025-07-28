@@ -5,9 +5,8 @@
 	last = log -1 @
 [init]
 	defaultBranch = main
-[user]
-	name = Andrzej Wiącek
-	email = qwrtln@users.noreply.github.com
+[include]
+    path = ~/.gitconfig-auth
 [push]
 	autoSetupRemote = true
 [checkout]
@@ -39,3 +38,9 @@
 	line-numbers-minus-style = "#ff6b6b"
 	line-numbers-plus-style = "#51cf66"
 	line-numbers-zero-style = "#6c757d"
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
