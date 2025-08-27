@@ -29,7 +29,7 @@ fzf_compgen_dir() {
 }
 
 fkill() {
-  ps aux | fzf --prompt="Select process to kill: " | awk '{print $2}' | xargs -r kill
+  ps aux | fzf --prompt="Select process to kill: " | awk '{print $2}' | xargs -r sudo kill
 }
 
 # Search hidden files while respecting .gitignore
