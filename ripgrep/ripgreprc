@@ -1,0 +1,4 @@
+--hiden
+--follow
+--glob=!.git/
+--smart-case
