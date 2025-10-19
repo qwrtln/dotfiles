@@ -1,5 +1,6 @@
 alias g='git'
 alias hibernate='systemctl hibernate -i && reset'
+alias j='jj'
 alias k='kubectl'
 alias libreoffice='libreoffice --safe-mode'
 alias ll='ls -hla'
@@ -27,13 +28,4 @@ upgrade() {
         return 1
     fi
     yay && sudo pacman -Scc
-}
-
-res-tmux() {
-    SESSION="tmux_resurrect_19700101T000000.txt"
-    cd ~/.tmux/resurrect || exit
-    /usr/bin/ls | grep -v "$SESSION" | xargs rm
-    ln -s "$SESSION" last
-    cd - || exit
-    tmux
 }
