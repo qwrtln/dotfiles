@@ -47,7 +47,7 @@ font-family-bold = "MesloLGS NF"
 font-family-italic = "MesloLGS NF"
 font-family-bold-italic = "MesloLGS NF"
 font-size = 10
-config=file = ?custom-font-size
+config-file = ?custom-font-size
 
 background-opacity = 0.92
 theme = "TokyoNight Storm"
