@@ -30,7 +30,7 @@ case "$(uname -s)" in
     alias python='/opt/homebrew/bin/python3'
     ;;
   Linux*)
-    alias hibernate='systemctl hibernate -i && reset'
+    alias hibernate='~/.dotfiles/bin/hibernate -y'
     open() {
         xdg-open "$1" &> /dev/null
     }

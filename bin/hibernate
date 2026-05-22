@@ -1,0 +1,14 @@
+#!/bin/sh
+EXT="quicksettings-audio-devices-hider@marcinjahn.com"
+
+if [ "$1" != "-y" ]; then
+    zenity --question --text="Hibernate?" || exit 0
+fi
+
+gnome-extensions disable "$EXT"
+loginctl lock-session
+sleep 0.2
+if systemctl hibernate; then
+    sleep 2
+fi
+gnome-extensions enable "$EXT"

@@ -35,7 +35,7 @@ fkill() {
 # Search hidden files while respecting .gitignore
 fv () {
     local file
-    file=$(fd --type f --hidden --strip-cwd-prefix | fzf)
+    file=$(fd --type f --hidden --exclude .git --strip-cwd-prefix | fzf)
     if [[ -n "$file" ]]; then
         nvim "$file"
         print -s nvim "$file"
