@@ -1,17 +1,25 @@
 #!/bin/bash
-EXT="gsconnect@andyholmes.github.io"
+EXTS=(
+  "gsconnect@andyholmes.github.io"
+  "quicksettings-audio-devices-hider@marcinjahn.com"
+)
 
 if [[ "$1" != "-y" ]]; then
-    zenity --question --text="Hibernate?" || exit 0
+  zenity --question --text="Hibernate?" || exit 0
 fi
 
-gnome-extensions disable "$EXT"
+for EXT in "${EXTS[@]}"; do
+  gnome-extensions disable "$EXT"
+done
+
 loginctl lock-session
 sleep 0.5
 (
-    if systemctl hibernate; then
-        sleep 60
-    fi
+  if systemctl hibernate; then
+    sleep 60
+  fi
+  for EXT in "${EXTS[@]}"; do
     gnome-extensions enable "$EXT"
+  done
 ) &
 disown
