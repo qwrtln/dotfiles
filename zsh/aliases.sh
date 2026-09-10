@@ -1,13 +1,19 @@
 alias g='git'
 alias j='jj'
 alias k='kubectl'
-alias libreoffice='libreoffice --safe-mode'
 alias ll='ls -hla'
 alias ls='lsd'
 alias pypy='pypy3'
 alias tms='tmux at -t sys'
 alias v='nvim'
 alias yd='yazi ~/Downloads'
+
+alert() {
+    local ec=$?
+    local snd=~/.dotfiles/sounds/success.mp3
+    [ $ec -ne 0 ] && snd=~/.dotfiles/sounds/failure.mp3
+    afplay "$snd" 2>/dev/null || paplay "$snd" 2>/dev/null || aplay "$snd" 2>/dev/null
+}
 
 pingtime() {
     ping "$1" | while read -r pong; do echo "$(date +"%Y-%m-%d %T"): $pong"; done
@@ -31,6 +37,7 @@ case "$(uname -s)" in
     ;;
   Linux*)
     alias hibernate='~/.dotfiles/bin/hibernate -y'
+    alias libreoffice='libreoffice --safe-mode'
     open() {
         xdg-open "$1" &> /dev/null
     }
