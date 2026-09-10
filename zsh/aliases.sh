@@ -9,10 +9,10 @@ alias v='nvim'
 alias yd='yazi ~/Downloads'
 
 alert() {
-    local ec=$?
-    local snd=~/.dotfiles/sounds/success.mp3
-    [ $ec -ne 0 ] && snd=~/.dotfiles/sounds/failure.mp3
-    afplay "$snd" 2>/dev/null || paplay "$snd" 2>/dev/null || aplay "$snd" 2>/dev/null
+    local exit_code=$?
+    local sound=~/.dotfiles/sounds/success.mp3
+    [ $exit_code -ne 0 ] && sound=~/.dotfiles/sounds/failure.mp3
+    afplay "$sound" 2>/dev/null || paplay "$sound" 2>/dev/null || aplay "$sound" 2>/dev/null
 }
 
 pingtime() {
