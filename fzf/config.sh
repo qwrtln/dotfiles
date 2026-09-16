@@ -41,3 +41,8 @@ fv () {
         print -s nvim "$file"
     fi
 }
+
+# fuzzy git branch switching
+branch () {
+  git checkout "$(git branch | fzf | tr -d ' *')"
+}
