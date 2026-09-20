@@ -47,7 +47,6 @@ font-family-bold = "MesloLGS NF"
 font-family-italic = "MesloLGS NF"
 font-family-bold-italic = "MesloLGS NF"
 font-size = 10
-config-file = ?custom-font-size
 
 background-opacity = 0.92
 theme = "TokyoNight Storm"
@@ -62,3 +61,6 @@ app-notifications = no-clipboard-copy
 keybind = ctrl+g=reload_config
 
 macos-option-as-alt = left
+
+# Create this file to overwrite default behavior
+config-file = ?custom-configs
