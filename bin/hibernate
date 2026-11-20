@@ -8,6 +8,20 @@ if [[ "$1" != "-y" ]]; then
   zenity --question --text="Hibernate?" || exit 0
 fi
 
+# Memory that can't be dropped (anon, shmem, kernel) must fit in swap.
+# The image is LZO-compressed, so comparing uncompressed size leaves ~2x margin.
+read -r USED_KB FREE_SWAP_KB < <(awk '
+  /^MemTotal:/     { total = $2 }
+  /^MemAvailable:/ { avail = $2 }
+  /^SwapFree:/     { swap = $2 }
+  END { print total - avail, swap }
+' /proc/meminfo)
+
+if ((USED_KB > FREE_SWAP_KB)); then
+  zenity --error --text="Not enough swap to hibernate.\nUsed RAM: $((USED_KB / 1024)) MiB\nFree swap: $((FREE_SWAP_KB / 1024)) MiB"
+  exit 1
+fi
+
 for EXT in "${EXTS[@]}"; do
   gnome-extensions disable "$EXT"
 done
